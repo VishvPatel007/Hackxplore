@@ -1,0 +1,19 @@
+{
+  "name": "hackxplore",
+  "version": "1.0.0",
+  "description": "HackXplore idea",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VishvPatel007/Hackxplore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VishvPatel007/Hackxplore/issues"
+  },
+  "homepage": "https://github.com/VishvPatel007/Hackxplore#readme"
+}
