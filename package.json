@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/VishvPatel007/Hackxplore/issues"
   },
-  "homepage": "https://github.com/VishvPatel007/Hackxplore#readme"
+  "homepage": "https://github.com/VishvPatel007/Hackxplore#readme",
+  "dependencies": {
+    "@angular/cli": "^7.3.1"
+  }
 }
