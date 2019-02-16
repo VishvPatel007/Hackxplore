@@ -24,6 +24,70 @@ participant SampleParticipant identified by participantId {
   o String lastName
 }
 
+participant Patient identified by patientId{
+  o String patientId
+  o String fullName
+  o String address
+  o String drOfficeLocation
+  o Integer age
+  o String sex
+  o CriminalRecord criminalRecord
+  o Boolean previousOD
+  o Boolean familyOD
+  o Boolean familyCrime
+  o Double income
+  o Double familyIncome
+  o Double weight
+  o Double height
+  o String educationLevel
+  o String[] otherMedications
+  o Boolean alcoholAddiction
+  o Integer familyMembers
+  o Integer activityLevel //from 1-10
+  o Double avgHeartRate
+  o Double bodyFatPercentage 
+}
+
+participant Doctor identified by doctorId{
+  o String doctorId
+  o String firstName
+  o String lastName
+  o String address
+  o Double averagePatientSalary
+  o Integer age
+}
+
+participant Pharmacy identified by pharmacyId{
+  o String pharmacyId
+  o String name
+  o String location
+  o Boolean flagged
+  o Double averageWorkerSalary
+  o Double averagePatientSalary
+}
+
+asset CriminalRecord identified by criminalRecordId{
+  o String criminalRecordId
+  o String[] priorOffenses
+  o String[] convictions
+  --> Patient patient
+}
+
+asset Prescription identified by prescriptionId{
+  o String prescriptionId
+  --> Patient patient
+  --> Doctor doctor
+  --> Pharmacy pharmacy
+  o String drug
+  o Double amount
+  o Integer refills
+  o String dateWritten
+  o String dateIssued
+  o Boolean refillable
+  o String doctorRecommendations
+  o Boolean fulfilled
+}
+
 asset SampleAsset identified by assetId {
   o String assetId
   --> SampleParticipant owner
@@ -33,6 +97,17 @@ asset SampleAsset identified by assetId {
 transaction SampleTransaction {
   --> SampleAsset asset
   o String newValue
+}
+
+transaction prescriptionFullfillment{
+  --> Prescription prescription
+  o String dateIssued
+}
+
+event prescriptionEvent{
+  --> Prescription prescription
+  o String dateIssued
+  o Boolean fulfilled
 }
 
 event SampleEvent {
