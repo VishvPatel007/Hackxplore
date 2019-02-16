@@ -32,10 +32,6 @@ export class MapComponent implements OnInit {
   ngOnInit() {
   }
 
-  /**
-   * takes a google maps map object and renders car repair locations on it
-   * @param map --> The map object to render locations on
-   */
   mapReady(map: any) {
     let self = this;
     this.infoWindow = new google.maps.InfoWindow();
@@ -44,7 +40,9 @@ export class MapComponent implements OnInit {
       lat: this.lat,
       lng: this.lng
     });
-    this.infoWindow.setContent('This your current location');
+    this.infoWindow.setContent(
+      "<span class='font-italic'>[You are here]</span><br><span><span class='font-weight-bold'>Orange</span> - Incidents</span><br><span class='font-weight-bold'>Blue</span> - Relief Centre</span></div>"
+    );
     this.infoWindow.open(map);
 
     this.service = new google.maps.places.PlacesService(map);
