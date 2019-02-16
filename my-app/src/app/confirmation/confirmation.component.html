@@ -1,0 +1,47 @@
+<app-nav-bar></app-nav-bar>
+<div class="row d-flex justify-content-center align-items-center main ml-sm-0 mr-sm-0 ml-3 mr-3">
+  <div class="col-sm-12 text-center mb-5" *ngIf="!fileUploaded">
+    <h1>Here's what I found out!</h1>
+    <p class="font-italic">Feel free to edit any fields before submitting</p>
+  </div>
+
+  <div class="w-sm-40">
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Doctor Name: </span>{{reqBody.doctorName}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Doctor Address: </span>{{reqBody.doctorAddress}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Client Name: </span>{{reqBody.clientName}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Client Address: </span>{{reqBody.clientAddress}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Client Age: </span>{{reqBody.clientAge}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Client Sex: </span>{{reqBody.clientSex}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Date Prescribed: </span>{{reqBody.datePrescribed}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Drug Name: </span>{{reqBody.drugAmount}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Drug Amount: </span>{{reqBody.drugAmount}}
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Refills: </span>{{reqBody.refills}}
+    </div>
+  </div>
+
+</div>
+
+<div class="row d-flex justify-content-center align-items-center main pb-5">
+  <div class="col-sm-12 text-center">
+    <a class="btn-lg btn-primary btn blue-button mt-sm-3 mt-0" [routerLink]="['/confirmation']">Confirm</a>
+  </div>
+</div>

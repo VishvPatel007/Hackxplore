@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {LandingComponent} from './landing/landing.component';
 import { BeginComponent } from './begin/begin.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'begin',
     component: BeginComponent
+  },
+  {
+    path: 'confirmation',
+    component: ConfirmationComponent
   }
 ];
 
