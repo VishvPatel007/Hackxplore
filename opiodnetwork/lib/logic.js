@@ -41,3 +41,18 @@ async function sampleTransaction(tx) {
     event.newValue = tx.newValue;
     emit(event);
 }
+
+/**
+ * Prescription Fullfilment
+ * @param {org.example.opiodnetwork.prescriptionFullfilment} prescriptionFullfilment
+ * @transaction
+ */
+async function prescriptionFullfilment(tx){
+    tx.prescription.dateIssued = tx.dateIssued;
+    tx.prescription.fulfilled = true;
+    
+    // Get the prescription registry
+    const assetRegistry = await getAssetRegistry('org.example.opiodnetwork.Prescription');
+    // Update the asset in the asset registry.
+    await assetRegistry.update(tx.asset);
+}
