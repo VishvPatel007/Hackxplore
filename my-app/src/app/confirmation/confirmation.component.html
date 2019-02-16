@@ -13,16 +13,16 @@
       <span class="blue">Doctor Address: </span>{{reqBody.doctorAddress}}
     </div>
     <div class="col-sm-12 text-center text-sm-left mb-3">
-      <span class="blue">Client Name: </span>{{reqBody.clientName}}
+      <span class="blue">Patient Name: </span>{{reqBody.patientName}}
     </div>
     <div class="col-sm-12 text-center text-sm-left mb-3">
-      <span class="blue">Client Address: </span>{{reqBody.clientAddress}}
+      <span class="blue">Patient Address: </span>{{reqBody.patientAddress}}
     </div>
     <div class="col-sm-12 text-center text-sm-left mb-3">
-      <span class="blue">Client Age: </span>{{reqBody.clientAge}}
+      <span class="blue">Patient Age: </span>{{reqBody.patientAge}}
     </div>
     <div class="col-sm-12 text-center text-sm-left mb-3">
-      <span class="blue">Client Sex: </span>{{reqBody.clientSex}}
+      <span class="blue">Patient Sex: </span>{{reqBody.patientSex}}
     </div>
     <div class="col-sm-12 text-center text-sm-left mb-3">
       <span class="blue">Date Prescribed: </span>{{reqBody.datePrescribed}}
@@ -37,10 +37,12 @@
       <span class="blue">Refills: </span>{{reqBody.refills}}
     </div>
   </div>
-
 </div>
 
 <div class="row d-flex justify-content-center align-items-center main pb-5">
+  <div class="col-sm-12 text-center">
+    <h3 class="green">This is a safe patient</h3>
+  </div>
   <div class="col-sm-12 text-center">
     <a class="btn-lg btn-primary btn blue-button mt-sm-3 mt-0" [routerLink]="['/success']">Confirm</a>
   </div>
