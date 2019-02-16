@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+<app-nav-bar show-button=true></app-nav-bar>
 <div class="row d-flex justify-content-center align-items-center main">
   <div class="col-sm-5 text-sm-left text-center">
     <div class="ml-sm-5">
@@ -8,7 +8,7 @@
         magna aliqua. Pellentesque diam volutpat commodo sed egestas. Elementum sagittis vitae et leo duis ut. Nulla
         facilisi nullam vehicula ipsum. Duis at consectetur lorem donec. Eu augue ut lectus arcu.
       </p>
-      <a class="btn-lg btn-primary btn blue-button mt-sm-3 mt-0">Start Demo</a>
+      <a class="btn-lg btn-primary btn blue-button mt-sm-3 mt-0" [routerLink]="['begin']">Start Demo</a>
     </div>
   </div>
   <div class="col-sm-7">
@@ -21,7 +21,7 @@
       <img src="assets/drug.png" class="img-fluid">
     </div>
     <div class="col-sm-6 text-sm-left text-center order-sm-2 order-1">
-      <div class="ml-sm-5">
+      <div class="mr-sm-5">
         <h1>Stopping <span class="font-weight-bold white">opioids</span> in their tracks.</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

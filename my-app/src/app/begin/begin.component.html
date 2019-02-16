@@ -1,0 +1,18 @@
+<app-nav-bar></app-nav-bar>
+<div class="row d-flex justify-content-center align-items-center main">
+  <input type="file" (change)="uploadPrescription($event);" id="prescription" name="prescription" class="d-none">
+  <div class="col-sm-12 text-center mb-5" *ngIf="!fileUploaded">
+    <h1>Upload a copy of the <span class="blue">prescription</span> below</h1>
+  </div>
+
+  <div class="col-8 text-center upload border" (click)="clickForFile();">
+    <p class="massive" *ngIf="!fileUploaded">+</p>
+    <img *ngIf="fileUploaded" [src]="prescription" class="img-fluid w-50 h-50 mt-3 mb-3">
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center align-items-center main pb-5" *ngIf="fileUploaded">
+  <div class="col-sm-12 text-center">
+    <a class="btn-lg btn-primary btn blue-button mt-sm-3 mt-0">Submit Prescription</a>
+  </div>
+</div>

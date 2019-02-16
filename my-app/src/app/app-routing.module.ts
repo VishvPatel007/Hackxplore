@@ -6,11 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import {LandingComponent} from './landing/landing.component';
+import { BeginComponent } from './begin/begin.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LandingComponent
+  },
+  {
+    path: 'begin',
+    component: BeginComponent
   }
 ];
 

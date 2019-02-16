@@ -1,5 +1,9 @@
-<nav class="navbar frosted">
-  <a class="navbar-brand title ml-sm-3 ml-0" href="#">Galen</a>
-  <a class="btn btn-primary blue">Start Demo</a>
+<nav class="navbar frosted" *ngIf="navSet">
+  <a class="navbar-brand font-weight-bold title ml-sm-3 ml-0" href="#">Galen</a>
+  <a class="btn btn-primary blue" [routerLink]="['begin']">Start Demo</a>
+</nav>
+
+<nav class="navbar frosted" *ngIf="!navSet">
+  <a class="navbar-brand font-weight-bold title ml-sm-3 ml-0" href="#">Galen</a>
 </nav>
 
