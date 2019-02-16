@@ -16,9 +16,9 @@ export class ConfirmationComponent implements OnInit {
     clientAge: '21',
     clientSex: 'F',
     datePrescribed: '17-02-2019',
-    drugName: 'Fentanyl',
-    drugAmount: '5mg',
-    refills: '10 pills'
+    drugName: 'Codeine',
+    drugAmount: '30mg',
+    refills: 'None'
   }
 
   constructor() { }

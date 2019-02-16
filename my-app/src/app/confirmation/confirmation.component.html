@@ -1,12 +1,12 @@
 <app-nav-bar></app-nav-bar>
 <div class="row d-flex justify-content-center align-items-center main ml-sm-0 mr-sm-0 ml-3 mr-3">
-  <div class="col-sm-12 text-center mb-5" *ngIf="!fileUploaded">
+  <div class="col-sm-12 text-center mb-3" *ngIf="!fileUploaded">
     <h1>Here's what I found out!</h1>
     <p class="font-italic">Feel free to edit any fields before submitting</p>
   </div>
 
-  <div class="w-sm-40">
-    <div class="col-sm-12 text-center text-sm-left mb-3">
+  <div class="w-sm-40 card pl-3 pr-3">
+    <div class="col-sm-12 text-center text-sm-left mb-3 mt-3">
       <span class="blue">Doctor Name: </span>{{reqBody.doctorName}}
     </div>
     <div class="col-sm-12 text-center text-sm-left mb-3">
