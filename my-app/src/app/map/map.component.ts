@@ -15,7 +15,13 @@ export class MapComponent implements OnInit {
   //@TODO Abhinav add what you want
   riskZones = [
     {lat: 43.651492, lng: -79.405834},
-    {lat: 43.663038, lng: -79.410632}
+    {lat: 43.663038, lng: -79.410632},
+    {lat: 43.664456, lng: -79.384590},
+    {lat: 43.662129, lng: -79.380147}
+  ];
+
+  safeZones = [
+    {lat: 43.657758, lng: -79.402242},
   ];
 
   infoWindow: any;

@@ -1,16 +1,39 @@
 <app-nav-bar show-button="false"></app-nav-bar>
-<div class="row justify-content-center d-flex main">
+<div class="row justify-content-center d-flex main pb-sm-0 pb-5">
   <div class="col-sm-8">
     <agm-map id="map" [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom"
              (mapReady)="setPosition($event)">
       <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
       <agm-overlay *ngFor="let riskZones of riskZones" [latitude]="riskZones.lat" [longitude]="riskZones.lng">
         <!-- blue html square -->
-        <div class="heatmap"></div>
+        <div class="heatmap-orange"></div>
+      </agm-overlay>
+      <agm-overlay *ngFor="let safeZones of safeZones" [latitude]="safeZones.lat" [longitude]="safeZones.lng">
+        <!-- blue html square -->
+        <div class="heatmap-blue"></div>
       </agm-overlay>
     </agm-map>
   </div>
-  <div class="col-sm-4 reset">
-    <span>put stuff here.</span>
+  <div class="col-sm-4 text-center reset">
+    <div class="col-sm-12 text-center mb-5">
+      <h1>Here are the <span class="blue">results...</span></h1>
+    </div>
+    <div class="row d-flex justify-content-center card squish pt-4 mb-5">
+      <div class="col-sm-12 text-center mb-3">
+        <h2><span class="orange-text font-weight-bold">4</span> incidents in the past 30 days</h2>
+      </div>
+      <div class="col-sm-12 text-center mb-3">
+        <h2><span class="blue font-weight-bold">1</span> relief centre recommended</h2>
+      </div>
+      <div class="col-sm-12 text-center mb-3">
+        <h2><span class="orange-text font-weight-bold">4</span> pharmacies flagged</h2>
+      </div>
+      <div class="col-sm-12 text-center mb-3">
+        <h2><span class="blue font-weight-bold">5</span> hospitals in the vicinity</h2>
+      </div>
+    </div>
+    <div class="col-sm-12 text-center">
+      <a class="btn btn-primary blue-button" [routerLink]="['/dashboard']">Go Back</a>
+    </div>
   </div>
 </div>
