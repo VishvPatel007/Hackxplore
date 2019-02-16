@@ -12,6 +12,11 @@ export class MapComponent implements OnInit {
   lat: number = 0;
   lng: number = 0;
   zoom: number = 14;
+  //@TODO Abhinav add what you want
+  riskZones = [
+    {lat: 43.651492, lng: -79.405834},
+    {lat: 43.663038, lng: -79.410632}
+  ];
 
   infoWindow: any;
   service: any;
@@ -28,25 +33,42 @@ export class MapComponent implements OnInit {
   mapReady(map: any) {
     let self = this;
     this.infoWindow = new google.maps.InfoWindow();
-    //Set position to the position found on init
+
     this.infoWindow.setPosition({
       lat: this.lat,
       lng: this.lng
     });
-    this.infoWindow.setContent('You are here!');
+    this.infoWindow.setContent('This your current location');
     this.infoWindow.open(map);
 
     this.service = new google.maps.places.PlacesService(map);
-    //Search for places nearby with a certain radius.
+
+    //Search for parks
     this.service.nearbySearch({
       location: {
         lat: this.lat,
         lng: this.lng
-      }, 
+      },
       radius: 2500,
-      type: 'cafe'
+      type: 'park'
     }, function (results, status) {
-      //Create markers and a list column based on results from nearby search
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (let i = 0; i < results.length; i++) {
+          //@TODO will softcode later
+          //createMarker(results[i]);
+        }
+      }
+    });
+
+    //Search for pharmacies
+    this.service.nearbySearch({
+      location: {
+        lat: this.lat,
+        lng: this.lng
+      },
+      radius: 2500,
+      type: 'pharmacy'
+    }, function (results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (let i = 0; i < results.length; i++) {
           createMarker(results[i]);
@@ -54,31 +76,22 @@ export class MapComponent implements OnInit {
       }
     });
 
-    /**
-     * Creates a marker to show on the maps object for a location
-     * @param place --> The location to place the marker
-     */
-    function createMarker(place) {
+    function createMarker(loc) {
       let marker = new google.maps.Marker({
         map: map,
-        position: place.geometry.location
+        position: loc.geometry.location
       });
 
       google.maps.event.addListener(marker, 'click', function () {
-        self.infoWindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-          'Located at ' + place.vicinity //place.formatted_address
+        self.infoWindow.setContent('<div><strong>' + loc.name + '</strong><br>' +
+          'Located at ' + loc.vicinity //@TODO Abhinav
           + '</div>');
         self.infoWindow.open(map, this);
       });
     }
   }
 
-  /**
-   * Uses the geolocation API to set the users current posistion
-   */
-  setCurrentPosition(e = undefined) {
-    console.log("call set");
-
+  setPosition(event = undefined) {
     let self = this;
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -86,14 +99,8 @@ export class MapComponent implements OnInit {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
         this.zoom = 15;
-
-        if (e)
-          self.mapReady(e);
+        self.mapReady(event);
       });
-    } else {
-      if (e)
-        self.mapReady(e);
     }
   }
-
 }

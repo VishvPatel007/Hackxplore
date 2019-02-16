@@ -2,8 +2,15 @@
 <div class="row justify-content-center d-flex main">
   <div class="col-sm-8">
     <agm-map id="map" [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom"
-             (mapReady)="setCurrentPosition($event)">
+             (mapReady)="setPosition($event)">
       <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      <agm-overlay *ngFor="let riskZones of riskZones" [latitude]="riskZones.lat" [longitude]="riskZones.lng">
+        <!-- blue html square -->
+        <div class="heatmap"></div>
+      </agm-overlay>
     </agm-map>
+  </div>
+  <div class="col-sm-4 reset">
+    <span>put stuff here.</span>
   </div>
 </div>
