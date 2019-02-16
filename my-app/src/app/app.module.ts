@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReportComponent } from './report/report.component';
 import { MapComponent } from './map/map.component';
 import {AgmCoreModule} from '@agm/core';
+import { AgmOverlays } from 'agm-overlays';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,9 @@ import {AgmCoreModule} from '@agm/core';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AgmOverlays,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAKDu8ti6WtofsN6S5oH8GByrZL0zasCVs',
+      apiKey: 'AIzaSyAKDu8ti6WtofsN6S5oH8GByrZL0zasCVs' + '&libraries=visualization',
       libraries: ["places"]
     })
   ],
