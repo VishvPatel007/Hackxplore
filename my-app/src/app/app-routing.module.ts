@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {LandingComponent} from './landing/landing.component';
 import { BeginComponent } from './begin/begin.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'confirmation',
     component: ConfirmationComponent
+  },
+  {
+    path: 'success',
+    component: SuccessComponent
   }
 ];
 

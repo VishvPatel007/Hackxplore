@@ -7,6 +7,7 @@ import { LandingComponent } from './landing/landing.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BeginComponent } from './begin/begin.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
     LandingComponent,
     NavBarComponent,
     BeginComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
