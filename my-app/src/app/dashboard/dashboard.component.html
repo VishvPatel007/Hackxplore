@@ -1,0 +1,19 @@
+<app-nav-bar show-button="false"></app-nav-bar>
+<div class="row d-flex justify-content-center align-items-center main ml-sm-0 mr-sm-0 ml-3 mr-3 pb-sm-5 pb-0">
+  <div class="col-sm-12 text-center mb-3">
+    <a [routerLink]="['/report']" id="report" name="report" class="d-none"></a>
+    <a [routerLink]="['/map']" id="map" name="map" class="d-none"></a>
+    <h1>Welcome to your <span class="blue">dashboard</span></h1>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center pb-5">
+  <div class="card col-sm-5 text-center mb-sm-0 mb-4 mr-sm-5 mr-0" (click)="click('report');">
+    <img src="assets/report.svg" class="img-fluid resize shift mb-5 text-center">
+    <p class="text ml-5 mr-5">Submit Report</p>
+  </div>
+  <div class="card col-sm-5 text-center" (click)="click('map');">
+    <img src="assets/map.svg" class="img-fluid resize shift mb-5 text-center">
+    <p class="text ml-5 mr-5">View Data</p>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<app-nav-bar show-button="false"></app-nav-bar>
+<div class="row d-flex justify-content-center align-items-center main">
+  <input type="file" id="prescription" name="prescription" class="d-none">
+  <div class="col-sm-12 text-center mb-sm-5 mb-3">
+    <h1>Fill out the <span class="blue">report</span> below</h1>
+  </div>
+
+  <div class="w-sm-40 card pl-3 pr-3">
+    <div class="col-sm-12 text-center text-sm-left mb-3 mt-3">
+      <span class="blue">Victim Name: </span><input class="text form-control modern ml-2" type="text" placeholder="Name" (input)="reqBody.victimName=$event.target.value">
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Victim Location: </span><input class="text form-control modern ml-2" type="text" placeholder="Location" (input)="reqBody.victimLocation=$event.target.value">
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Victim Age: </span><input class="text form-control modern ml-2" type="text" placeholder="Age" (input)="reqBody.victimAge=$event.target.value">
+    </div>
+    <div class="col-sm-12 text-center text-sm-left mb-3">
+      <span class="blue">Victim Sex: </span><input class="text form-control modern ml-2" type="text" placeholder="Sex" (input)="reqBody.victimSex=$event.target.value">
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center align-items-center main pb-5">
+  <div class="col-sm-12 text-center">
+    <a class="btn-lg btn-primary btn blue-button mt-sm-3 mt-0" [routerLink]="['/dashboard']">Submit and Go Back</a>
+  </div>
+</div>

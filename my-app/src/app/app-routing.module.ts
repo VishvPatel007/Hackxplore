@@ -9,6 +9,9 @@ import {LandingComponent} from './landing/landing.component';
 import { BeginComponent } from './begin/begin.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { SuccessComponent } from './success/success.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReportComponent } from './report/report.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   {
@@ -26,6 +29,18 @@ const routes: Routes = [
   {
     path: 'success',
     component: SuccessComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'report',
+    component: ReportComponent
+  },
+  {
+    path: 'map',
+    component: MapComponent
   }
 ];
 

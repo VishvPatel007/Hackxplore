@@ -1,0 +1,9 @@
+<app-nav-bar show-button="false"></app-nav-bar>
+<div class="row justify-content-center d-flex">
+  <div class="col-sm-8">
+    <agm-map id="map" [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom"
+             (mapReady)="setCurrentPosition($event)">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
+</div>

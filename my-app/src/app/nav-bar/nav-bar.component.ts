@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.less']
 })
 export class NavBarComponent implements OnInit {
-  @Input('show-button') navSet: boolean;
+  @Input('show-button') navSet: string;
 
   constructor() { }
 

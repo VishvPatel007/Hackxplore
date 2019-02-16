@@ -8,6 +8,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BeginComponent } from './begin/begin.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { SuccessComponent } from './success/success.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReportComponent } from './report/report.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { SuccessComponent } from './success/success.component';
     NavBarComponent,
     BeginComponent,
     ConfirmationComponent,
-    SuccessComponent
+    SuccessComponent,
+    DashboardComponent,
+    ReportComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
