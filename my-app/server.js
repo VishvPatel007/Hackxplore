@@ -45,6 +45,5 @@ app.post('/submitPrescription', function (req, res) { //req from angular front e
         res.send((JSON.parse(body).responses[0])['textAnnotations'][0]['description']);
     });
   
-    
 
 });

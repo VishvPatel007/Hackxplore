@@ -53,5 +53,8 @@
       }
     },
     "insert_license": false
+  },
+  "dependencies": {
+    "request": "^2.88.0"
   }
 }
