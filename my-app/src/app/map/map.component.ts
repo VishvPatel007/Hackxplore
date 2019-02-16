@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {MapsAPILoader} from '@agm/core';
+
+declare var google;
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.less']
 })
+
 export class MapComponent implements OnInit {
-  lat: number = "";
-  lng: number = "";
+  lat: number = 0;
+  lng: number = 0;
   zoom: number = 14;
 
   infoWindow: any;
@@ -34,23 +36,20 @@ export class MapComponent implements OnInit {
     this.infoWindow.setContent('You are here!');
     this.infoWindow.open(map);
 
-    this.isLoading = false;
-
     this.service = new google.maps.places.PlacesService(map);
     //Search for places nearby with a certain radius.
     this.service.nearbySearch({
       location: {
         lat: this.lat,
         lng: this.lng
-      },
+      }, 
       radius: 2500,
-      type: 'car_repair'
+      type: 'cafe'
     }, function (results, status) {
       //Create markers and a list column based on results from nearby search
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (let i = 0; i < results.length; i++) {
           createMarker(results[i]);
-          addToResults(results[i]);
         }
       }
     });
@@ -72,20 +71,28 @@ export class MapComponent implements OnInit {
         self.infoWindow.open(map, this);
       });
     }
+  }
 
-    /**
-     * Adds a location to the list of results that we display to the user
-     * @param place
-     */
-    function addToResults(place) {
-      let listItem = document.createElement("a");
-      listItem.setAttribute("class", "list-group-item");
-      listItem.setAttribute("href", "https://www.google.com/maps?saddr=My+Location&daddr=" + place.vicinity);
-      listItem.setAttribute("target", "_blank");
-      listItem.style.cssText = "text-decoration: none; color: black;";
-      listItem.innerHTML = "<strong>" + place.name + "</strong><br>" + place.vicinity;
-      //console.log(listItem);
-      self.renderer.appendChild(self.elRef.nativeElement.querySelector("#results"), listItem);
+  /**
+   * Uses the geolocation API to set the users current posistion
+   */
+  setCurrentPosition(e = undefined) {
+    console.log("call set");
+
+    let self = this;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        console.log(position);
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+        this.zoom = 15;
+
+        if (e)
+          self.mapReady(e);
+      });
+    } else {
+      if (e)
+        self.mapReady(e);
     }
   }
 

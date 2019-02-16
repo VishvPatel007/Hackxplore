@@ -11,6 +11,7 @@ import { SuccessComponent } from './success/success.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReportComponent } from './report/report.component';
 import { MapComponent } from './map/map.component';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,11 @@ import { MapComponent } from './map/map.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAKDu8ti6WtofsN6S5oH8GByrZL0zasCVs',
+      libraries: ["places"]
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
